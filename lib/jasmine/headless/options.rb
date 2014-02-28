@@ -35,7 +35,7 @@ module Jasmine
         srand
         @options[:seed] = rand(10000)
         read_defaults_files
-        opts.each { |k, v| @options[k] = v if v }
+        @options.merge! opts
       end
 
       def process_option(*args)
